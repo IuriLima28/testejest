@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "jest",
+    "build": "webpack",
+    "start": "webpack serve"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
