@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dividir Lucro</title>
+    <link rel="stylesheet" href="exercicio-05.css">
+</head>
+<body>
+
+    <h2>Divisão de Lucro</h2>
+
+    <label>Lucro Total:</label>
+    <input type="number" id="lucro" placeholder="Digite o valor">
+    <button onclick="calcular()">Dividir</button>
+
+    <h3>Resultado:</h3>
+    <p id="resultado"></p>
+
+    <script>
+        function dividirLucro(lucroTotal) {
+            let quantidadeSocios = 3;
+            let valorPorSocio = lucroTotal / quantidadeSocios;
+
+            return {
+                lucroTotal: lucroTotal,
+                quantidadeSocios: quantidadeSocios,
+                valorPorSocio: valorPorSocio
+            };
+        }
+
+        function calcular() {
+            let lucro = Number(document.getElementById("lucro").value);
+            let resultado = dividirLucro(lucro);
+
+            document.getElementById("resultado").innerHTML =
+                "Lucro Total: R$ " + resultado.lucroTotal.toFixed(2) + "<br>" +
+                "Quantidade de Sócios: " + resultado.quantidadeSocios + "<br>" +
+                "Valor por Sócio: R$ " + resultado.valorPorSocio.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
