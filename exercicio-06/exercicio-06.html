@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Produção</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .campo { margin-bottom: 10px; }
+        label { display: block; }
+        #resultado { margin-top: 20px; padding: 10px; border-left: 4px solid #2196F3; background: #f0f7ff; }
+    </style>
+</head>
+<body>
+
+    <h2>Calcular Tempo de Produção</h2>
+
+    <div class="campo">
+        <label>Quantidade de Peças:</label>
+        <input type="number" id="qtdPecas" value="150">
+    </div>
+
+    <div class="campo">
+        <label>Quantidade de Máquinas:</label>
+        <input type="number" id="qtdMaquinas" value="1">
+    </div>
+
+    <button id="btnCalcular">Calcular</button>
+
+    <div id="resultado">Preencha os valores e clique em calcular.</div>
+
+    <script src="exercicio-06.js"></script>
+    
+    <script>
+        document.getElementById('btnCalcular').onclick = function() {
+            const pecas = Number(document.getElementById('qtdPecas').value);
+            const maquinas = Number(document.getElementById('qtdMaquinas').value);
+            
+            // Chama a função que está no exercicio-06.js
+            const dados = calcularTempoProducao(pecas, maquinas);
+
+            document.getElementById('resultado').innerHTML = 
+                `Tempo necessário: ${dados.horasNecessarias.toFixed(2)} horas.`;
+        };
+    </script>
+
+</body>
+</html>
