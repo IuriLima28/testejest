@@ -14,4 +14,4 @@ function calcularConsumo(distanciaKm, combustivelLitros, combustivelParaEstimar)
     return resultado;
 }
 
-module.exports = calcularConsumo;
+// module.exports = calcularConsumo;
