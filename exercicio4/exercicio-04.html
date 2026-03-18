@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Venda com Frete</title>
+  <link rel="stylesheet" href="exercicio-04.css">
+
+</head>
+<body>
+
+<h2>Calculadora de Venda com Frete</h2>
+
+<label>Valor do Produto (R$):</label>
+<input type="number" id="preco" placeholder="Digite o valor">
+<button onclick="executarCalculo()">Calcular</button>
+
+<p id="resultado"></p>
+<script src="exercicio-04.js"></script>
+
+<script>
+  function executarCalculo() {
+    const valor = Number(document.getElementById("preco").value);
+    if (!valor || valor <= 0) {
+      alert("Digite um valor válido");
+      return;
+    }
+
+    const resultado = calcularVendaComFrete(valor);
+
+    document.getElementById("resultado").innerText =
+      `Produto: R$ ${resultado.valorProdutos.toFixed(2)}\n` +
+      `Frete: R$ ${resultado.frete.toFixed(2)}\n` +
+      `Total: R$ ${resultado.valorTotal.toFixed(2)}`;
+  }
+</script>
+
+</body>
+</html>

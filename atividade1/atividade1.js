@@ -1,18 +1,13 @@
-function calcularJurosCompostos(valorInicial, meses) {
+function calcularJurosCompostos() {
 
-    const taxa = 0.015
+    let valorInicial = document.getElementById("valorInicial").value
+    let meses = document.getElementById("meses").value
+    let juros = 0.015 * meses
+    let valorFinal = valorInicial * juros
+    
+    alert("O valor inicial da aplicação é: " +valorInicial+ " reais")
+    alert("O tempo da aplicação é: " +meses+ " meses")
+    alert("O valor final obtido é: " +valorFinal+ " reais")
 
-    let valorFinal = valorInicial * Math.pow((1 + taxa), meses)
-    valorFinal = Number(valorFinal.toFixed(2))
-
-    let juros = Number((valorFinal - valorInicial).toFixed(2))
-
-    return {
-        valorInicial: valorInicial,
-        meses: meses,
-        valorFinal: valorFinal,
-        juros: juros
-    }
 }
-
 module.exports = calcularJurosCompostos;
