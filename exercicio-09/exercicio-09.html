@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Temperatura</title>
+    <script src="exercicio-09.js"></script>
+    <link rel="stylesheet" href="exercicio-09.css">
+
+</head>
+<body>
+
+    <h1>Conversor de Temperatura</h1>
+
+    <label>Temperatura em Celsius (°C):</label>
+    <input type="number" id="campoCelsius">
+
+    <button id="btnCalcular">Converter</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        const btn = document.getElementById('btnCalcular');
+        const input = document.getElementById('campoCelsius');
+        const display = document.getElementById('resultado');
+
+        btn.onclick = function() {
+            const valorCelsius = Number(input.value);
+            
+            // CORREÇÃO: Adicionei o "CtoF" como segundo parâmetro para o seu JS saber o que fazer
+            const dados = converterTemperatura(valorCelsius, "CtoF");
+
+            display.innerText = "Resultado: " + dados.celsius + "°C é igual a " + dados.fahrenheit + "°F";
+        };
+    </script>
+
+</body>
+</html>
